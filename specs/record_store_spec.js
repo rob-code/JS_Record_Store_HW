@@ -21,6 +21,9 @@ describe('RecordStore', function(){
     assert.strictEqual(10000, store.balance)
   })
 
+  it("has an empty opening inventory", function(){
+    assert.strictEqual(0, store.stockCount())
+  })
 
 
 }) 
