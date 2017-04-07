@@ -58,7 +58,9 @@ RecordStore.prototype = {
 
   stockByGenre: function( genre){
     return this.inventory.filter(function(record){
-    return genre === record.genre; 
+      //filter only looks for a true/false response from callback, building the 
+      //return array from values where callback evaluates to true 
+      return genre === record.genre; 
     })
   }
 
