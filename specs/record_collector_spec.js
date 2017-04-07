@@ -15,6 +15,10 @@ it("has cash", function(){
 assert.strictEqual("Bill", collector.cash)
 })
 
+it("has no records in collection at start", function(){
+  assert.strictEqual(0, collector.sizeOfCollection())
+})
+
 
 })
 
