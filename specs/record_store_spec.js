@@ -13,7 +13,6 @@ describe('RecordStore', function(){
     record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
     record3 = new Record("a", "b", "c", 1);
     record4 = new Record("d", "e", "f", 2);
-
   })
 
   it("has a name", function(){
@@ -47,6 +46,20 @@ describe('RecordStore', function(){
     store.addRecord(record4)
     p = store.listInventory();
     assert.deepEqual("Artist:d Title:e Genre:f Price:2", p[1])
+  })
+
+  it("can sell record and update store balance", function(){
+    store.addRecord(record1)
+    store.addRecord(record2)
+    store.sellRecord(record1)
+    assert.strictEqual(10900, store.balance)
+  })
+
+  it("can sell record and remove record from inventory", function(){
+    store.addRecord(record1)
+    store.addRecord(record2)
+    store.sellRecord(record2)
+    assert.strictEqual(1, store.stockCount())
   })
 
 

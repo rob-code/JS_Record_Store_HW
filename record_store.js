@@ -22,13 +22,35 @@ RecordStore.prototype = {
   },
 
   listInventory: function(){
-
     var itemsPrinted = this.inventory.map(function(record){
-        return this.printRecordDetails(record)
+        return this.printRecordDetails(record);
       }.bind(this)
     )
-    return itemsPrinted
+    return itemsPrinted;
   },
+
+  sellRecord: function(record){
+
+    if (this.inventory.includes(record)){
+      this.balance += record.price;
+
+      var index = this.inventory.indexOf(record)
+      this.inventory.splice(index, 1)
+
+      console.log("found")
+    
+    } 
+    else 
+    {
+      console.log("Sorry,", record.title, "is not in stock")
+
+    }
+
+
+
+  }
+
+
 
 }
 
