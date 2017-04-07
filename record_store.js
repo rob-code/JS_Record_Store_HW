@@ -56,10 +56,10 @@ RecordStore.prototype = {
     return report
   },
 
-  stockByGenre: function( genre){
+  stockByGenre: function(genre){
+    //filter only looks for a true/false response from callback, building the 
+    //return array from values where callback evaluates to true 
     return this.inventory.filter(function(record){
-      //filter only looks for a true/false response from callback, building the 
-      //return array from values where callback evaluates to true 
       return genre === record.genre; 
     })
   }
