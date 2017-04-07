@@ -36,19 +36,26 @@ RecordStore.prototype = {
 
       var index = this.inventory.indexOf(record)
       this.inventory.splice(index, 1)
-
-      console.log("found")
-    
     } 
     else 
     {
       console.log("Sorry,", record.title, "is not in stock")
-
     }
+  },
+
+  financialReport: function(){
+
+    report = {};
+    report = { "balance": this.balance}
+
+    console.log("The balance - in the store " + this.balance)
+
+    // //    this.
+
+    return report
 
 
-
-  }
+  },
 
 
 

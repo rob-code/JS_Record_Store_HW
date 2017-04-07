@@ -62,5 +62,12 @@ describe('RecordStore', function(){
     assert.strictEqual(1, store.stockCount())
   })
 
+  it("can report the financial position: store balance", function(){
+    store.addRecord(record1);
+    store.addRecord(record2);
+    var fr = store.financialReport();
+    console.log("The balance is : " + fr["balance"])
+  })
+
 
 }) 
