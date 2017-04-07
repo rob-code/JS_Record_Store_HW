@@ -13,6 +13,9 @@ describe('RecordStore', function(){
     record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
     record3 = new Record("a", "b", "c", 1);
     record4 = new Record("d", "e", "f", 2);
+
+    record5 = new Record("Beethoven", "9th Symphony", "classical", 1);
+    record6 = new Record("Yes", "Close to the Edge", "prog", 2);
   })
 
   it("has a name", function(){
@@ -69,6 +72,22 @@ describe('RecordStore', function(){
     assert.strictEqual(10000, report["balance"])
     assert.strictEqual(2100, report["stockValue"])
     assert.strictEqual(12100, report["netValue"])
+  })
+
+  it("can report the financial position: after record sale", function(){
+    store.addRecord(record1);
+    store.addRecord(record2);
+    store.sellRecord(record1)
+    var report = store.financialReport();
+    assert.strictEqual(10900, report["balance"])
+    assert.strictEqual(1200, report["stockValue"])
+    assert.strictEqual(12100, report["netValue"])
+    assert.strictEqual(1, store.stockCount())
+  })
+
+
+  it("can view all records by genre", function(){
+    
   })
 
 

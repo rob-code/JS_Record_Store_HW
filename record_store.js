@@ -54,8 +54,11 @@ RecordStore.prototype = {
 
     report = { "balance": this.balance, "stockValue": stockValue, "netValue": this.balance + stockValue}
     return report
-
   },
+
+  returnStockWithAttribute: function(){
+    //array filter method
+  }
 
 
 
