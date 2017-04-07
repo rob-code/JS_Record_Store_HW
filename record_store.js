@@ -21,11 +21,15 @@ RecordStore.prototype = {
     return details;
   },
 
-  // listInventory: function(){
-  //   this.inventory.forEach(function(record){
-  //     this.printRecordDetails(record)
-  //   }.bind(this);
-  // )}
+  listInventory: function(){
+  var itemsPrintedArray = []
+  this.inventory.forEach(function(record){
+      var i = this.printRecordDetails(record)
+      itemsPrintedArray.push(i)
+    }.bind(this)
+  )
+  return itemsPrintedArray
+  },
 
 }
 

@@ -11,6 +11,8 @@ describe('RecordStore', function(){
     store = new RecordStore("Rob's Records", "Edinburgh", 10000);
     record1 = new Record("Beatles", "Help", "pop", 900);
     record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
+    record3 = new Record("a", "b", "c", 1);
+    record4 = new Record("d", "e", "f", 2);
 
   })
 
@@ -40,10 +42,11 @@ describe('RecordStore', function(){
     assert.strictEqual("Artist:Beatles Title:Help Genre:pop Price:900", store.printRecordDetails(record1))
   })
 
-  xit("can list the store's inventory", function(){
-    store.addRecord(record1)
-    store.addRecord(record2)
-    store.listInventory();
+  it("can list the store's inventory", function(){
+    store.addRecord(record3)
+    store.addRecord(record4)
+    p = store.listInventory();
+    assert.deepEqual("Artist:d Title:e Genre:f Price:2", p[1])
   })
 
 
