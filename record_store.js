@@ -22,26 +22,12 @@ RecordStore.prototype = {
   },
 
   listInventory: function(){
-  
-    itemsPrinted = this.inventory.map(function(record){
-        var i = this.printRecordDetails(record)
-        itemsPrintedArray.push(i)
+
+    var itemsPrinted = this.inventory.map(function(record){
+        return this.printRecordDetails(record)
       }.bind(this)
     )
     return itemsPrinted
-
-
-
-  // var itemsPrintedArray = []
-  // this.inventory.forEach(function(record){
-  //     var i = this.printRecordDetails(record)
-  //     itemsPrintedArray.push(i)
-  //   }.bind(this)
-  // )
-
-  // return itemsPrintedArray
-
-
   },
 
 }
