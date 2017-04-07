@@ -3,20 +3,17 @@ var RecordCollector = require('../record_collector')
 var RecordStore = require('../record_store')
 var Record = require('../record')
 
-decribe("RecordCollector", function(){
+describe("RecordCollector", function(){
 
 var collector
 
 beforeEach(function(){
 collector = new RecordCollector("Bill", 3000)
-
 })
 
-
-it
-
-
-
+it("has cash", function(){
+assert.strictEqual("Bill", collector.cash)
+})
 
 
 })

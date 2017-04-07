@@ -1,6 +1,5 @@
-var RecordCollector = function(name, money){
-  this.name = name;
-  this.money = money;
+var RecordCollector = function(cash){
+  this.cash = cash;
   this.collection = [];
 
 
