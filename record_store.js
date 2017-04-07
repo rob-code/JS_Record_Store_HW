@@ -56,8 +56,12 @@ RecordStore.prototype = {
     return report
   },
 
-  returnStockWithAttribute: function(){
-    //array filter method
+  stockByGenre: function( genre){
+    return this.inventory.filter(function(record){
+      if (genre === record.genre){
+        return record
+      }
+    })
   }
 
 

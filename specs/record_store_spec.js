@@ -11,11 +11,14 @@ describe('RecordStore', function(){
     store = new RecordStore("Rob's Records", "Edinburgh", 10000);
     record1 = new Record("Beatles", "Help", "pop", 900);
     record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
-    record3 = new Record("a", "b", "c", 1);
-    record4 = new Record("d", "e", "f", 2);
+    record3 = new Record("d", "e", "f", 2);
+    record4 = new Record("Status Quo", "Whatever You Want", "pop", 2);
 
-    record5 = new Record("Beethoven", "9th Symphony", "classical", 1);
-    record6 = new Record("Yes", "Close to the Edge", "prog", 2);
+    record5 = new Record("Beethoven", "9th Symphony", "classical", 1000);
+    record6 = new Record("Yes", "Close to the Edge", "prog", 1250);
+    record7 = new Record("ELP", "Pictures at an Exhibtion", "prog", 1300);
+    record8 = new Record("Tchaikovsky", "1812 Overture", "classical", 1000);
+
   })
 
   it("has a name", function(){
@@ -48,7 +51,7 @@ describe('RecordStore', function(){
     store.addRecord(record3)
     store.addRecord(record4)
     p = store.listInventory();
-    assert.deepEqual("Artist:d Title:e Genre:f Price:2", p[1])
+    assert.deepEqual("Artist:d Title:e Genre:f Price:2", p[0])
   })
 
   it("can sell record and update store balance", function(){
@@ -87,7 +90,16 @@ describe('RecordStore', function(){
 
 
   it("can view all records by genre", function(){
-    
+    store.addRecord(record1);
+    store.addRecord(record2);
+    store.addRecord(record3);
+    store.addRecord(record4);
+    store.addRecord(record5);
+    store.addRecord(record6);
+    store.addRecord(record7);
+    store.addRecord(record8);
+    var bygenre = store.stockByGenre("pop");
+    assert.strictEqual(3, bygenre.length)
   })
 
 
