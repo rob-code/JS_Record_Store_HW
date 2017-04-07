@@ -25,5 +25,4 @@ it("has a price", function(){
   assert.strictEqual(900, record.price)
 })
 
-
 })

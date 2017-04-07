@@ -15,7 +15,10 @@ RecordStore.prototype = {
     this.inventory.push(record);
   },
 
-  
+  printRecordDetails: function(record){
+    console.log("Artist:", record.artist, " Title:", record.title, " Genre:", record.genre, " Price:", record.price);
+  }
+
 
 }
 

@@ -10,7 +10,7 @@ describe('RecordStore', function(){
   beforeEach(function(){
     store = new RecordStore("Rob's Records", "Edinburgh", 10000);
     record1 = new Record("Beatles", "Help", "pop", 900);
-    record2 = new Record("Elton John", "Yellow Brick Road", "pop", 1200);
+    record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
 
   })
 
@@ -35,5 +35,13 @@ describe('RecordStore', function(){
     store.addRecord(record2)
     assert.strictEqual(2, store.stockCount())
   })
+
+  it("can print out record's properties", function(){
+    store.printRecordDetails(record1);
+    store.printRecordDetails(record2);
+
+  })
+
+
 
 }) 
