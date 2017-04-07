@@ -3,7 +3,7 @@ var Record = require('../record')
 
 describe('Record', function(){
 
-var record
+var record;
 
 beforeEach(function(){
 record = new Record("Beatles", "Help", "pop", 900)

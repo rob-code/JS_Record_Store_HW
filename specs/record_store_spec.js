@@ -1,12 +1,17 @@
 var assert = require('assert')
 var RecordStore = require('../record_store')
+var Record = require('../record')
 
 describe('RecordStore', function(){
 
-  var store
+  var store;
+  var record1;
 
   beforeEach(function(){
-    store = new RecordStore("Rob's Records", "Edinburgh", 10000)
+    store = new RecordStore("Rob's Records", "Edinburgh", 10000);
+    record1 = new Record("Beatles", "Help", "pop", 900);
+    record2 = new Record("Elton John", "Yellow Brick Road", "pop", 1200);
+
   })
 
   it("has a name", function(){
@@ -25,5 +30,10 @@ describe('RecordStore', function(){
     assert.strictEqual(0, store.stockCount())
   })
 
+  it("can add record to inventory", function(){
+    store.addRecord(record1)
+    store.addRecord(record2)
+    assert.strictEqual(2, store.stockCount())
+  })
 
 }) 

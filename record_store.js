@@ -9,8 +9,13 @@ RecordStore.prototype = {
 
   stockCount: function(){
     return this.inventory.length;
-  }
+  },
 
+  addRecord: function(record){
+    this.inventory.push(record);
+  },
+
+  
 
 }
 
