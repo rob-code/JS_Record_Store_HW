@@ -62,11 +62,13 @@ describe('RecordStore', function(){
     assert.strictEqual(1, store.stockCount())
   })
 
-  it("can report the financial position: store balance", function(){
+  it("can report the financial position: store balance, stock value and netValue", function(){
     store.addRecord(record1);
     store.addRecord(record2);
-    var fr = store.financialReport();
-    console.log("The balance is : " + fr["balance"])
+    var report = store.financialReport();
+    assert.strictEqual(10000, report["balance"])
+    assert.strictEqual(2100, report["stockValue"])
+    assert.strictEqual(12100, report["netValue"])
   })
 
 

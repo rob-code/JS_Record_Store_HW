@@ -45,15 +45,15 @@ RecordStore.prototype = {
 
   financialReport: function(){
 
-    report = {};
-    report = { "balance": this.balance}
+    //get the stock balance
+    var stockValue = 0;
 
-    console.log("The balance - in the store " + this.balance)
+    this.inventory.forEach(function(record){
+      stockValue += record.price
+    }) 
 
-    // //    this.
-
+    report = { "balance": this.balance, "stockValue": stockValue, "netValue": this.balance + stockValue}
     return report
-
 
   },
 
