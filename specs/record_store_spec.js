@@ -36,12 +36,15 @@ describe('RecordStore', function(){
     assert.strictEqual(2, store.stockCount())
   })
 
-  it("can print out record's properties", function(){
-    store.printRecordDetails(record1);
-    store.printRecordDetails(record2);
-
+  it("can print out a record's properties", function(){
+    assert.strictEqual("Artist:Beatles Title:Help Genre:pop Price:900", store.printRecordDetails(record1))
   })
 
+  xit("can list the store's inventory", function(){
+    store.addRecord(record1)
+    store.addRecord(record2)
+    store.listInventory();
+  })
 
 
 }) 

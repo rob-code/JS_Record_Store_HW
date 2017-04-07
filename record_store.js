@@ -16,9 +16,16 @@ RecordStore.prototype = {
   },
 
   printRecordDetails: function(record){
-    console.log("Artist:", record.artist, " Title:", record.title, " Genre:", record.genre, " Price:", record.price);
-  }
+    var details = "Artist:" + record.artist +  " Title:" + record.title + " Genre:" + record.genre + " Price:" + record.price;
+    console.log(details);
+    return details;
+  },
 
+  // listInventory: function(){
+  //   this.inventory.forEach(function(record){
+  //     this.printRecordDetails(record)
+  //   }.bind(this);
+  // )}
 
 }
 
