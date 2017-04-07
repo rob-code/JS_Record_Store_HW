@@ -58,9 +58,7 @@ RecordStore.prototype = {
 
   stockByGenre: function( genre){
     return this.inventory.filter(function(record){
-      if (genre === record.genre){
-        return record
-      }
+    return genre === record.genre; 
     })
   }
 
