@@ -13,7 +13,6 @@ describe('RecordStore', function(){
     record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
     record3 = new Record("d", "e", "f", 2);
     record4 = new Record("Status Quo", "Whatever You Want", "pop", 2);
-
     record5 = new Record("Beethoven", "9th Symphony", "classical", 1000);
     record6 = new Record("Yes", "Close to the Edge", "prog", 1250);
     record7 = new Record("ELP", "Pictures at an Exhibtion", "prog", 1300);

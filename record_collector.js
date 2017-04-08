@@ -5,8 +5,19 @@ var RecordCollector = function(cash){
 
 RecordCollector.prototype = {
 
-sizeOfCollection: function(){
+collectionSize: function(){
   return this.collection.length
+},
+
+buy: function(record){
+  //test for enough cash
+  this.cash -= record.price;
+  this.collection.push(record);
+},
+
+sell: function(record){
+  //test if record is in collection
+
 }
 
 
