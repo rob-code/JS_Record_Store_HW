@@ -18,6 +18,7 @@ describe("RecordCollector", function(){
 
   beforeEach(function(){
     collector = new RecordCollector("Bill", 3000);
+    collector2 = new RecordCollector("George", 5000);
     record1 = new Record("Beatles", "Help", "pop", 900);
     record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
     record3 = new Record("d", "e", "f", 1);
@@ -27,7 +28,6 @@ describe("RecordCollector", function(){
     record7 = new Record("ELP", "Pictures at an Exhibtion", "prog", 1300);
     record8 = new Record("Tchaikovsky", "1812 Overture", "classical", 1000);
     record9 = new Record("Mr Bling", "Totally Expensive", "pop", 5000)
-
   })
 
   it("has cash", function(){
@@ -148,7 +148,6 @@ describe("RecordCollector", function(){
   })
 
   it("can sort record collection, highest to lowest", function(){
-
     collector.addCash(1000000);
     collector.buy(record1);
     collector.buy(record7);
@@ -163,6 +162,28 @@ describe("RecordCollector", function(){
     assert.strictEqual(5000, hiToLo[0].price);
     assert.strictEqual(1, hiToLo[hiToLo.length - 1].price);
   })
+
+it("can compare collection value with that of another collector", function(){
+  collector.addCash(1000000);
+  collector.buy(record1);
+  collector.buy(record7);
+  collector.buy(record3);
+  collector.buy(record4);
+  collector.buy(record9);
+  collector.buy(record5);
+  collector.buy(record6);
+  collector.buy(record8);
+  collector.buy(record2);
+
+  collector2.addCash(100000);
+  collector2.buy(record1);
+  collector2.buy(record7);
+  collector2.buy(record3);
+  collector2.buy(record4);
+  collector2.buy(record9);
+
+  collector.compareCollectionValues(collector2);
+})
 
 })
 

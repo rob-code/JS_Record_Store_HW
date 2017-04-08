@@ -78,8 +78,13 @@ RecordCollector.prototype = {
   sortHiToLo: function(){
     var array = this.sortArray();
     return array.reverse();
-  }
+  },
 
+  compareCollectionValues: function(otherCollector){
+    console.log(otherCollector.name + " has a collection valued at : " + otherCollector.collectionValue());
+    console.log(this.name + " has a collection valued at : " + this.collectionValue());
+
+  }
 
 
 }
