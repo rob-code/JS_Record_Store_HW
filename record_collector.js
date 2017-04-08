@@ -36,16 +36,20 @@ RecordCollector.prototype = {
     }
   },
 
-  collectionValue: function(){
-    var value = 0;
-    this.collection.forEach(function(record){
-        value += record.price;
-    })
-    return value
-  },
-
   addCash: function(amount){
     this.cash += amount;
+  },
+
+  getValue: function(array){
+    var value = 0;
+    array.forEach(function(record){
+      value += record.price;
+    })
+    return value;
+  },
+
+  collectionValue: function(){
+    return this.getValue(this.collection);
   },
 
   genreTotal: function(genre){
@@ -53,12 +57,7 @@ RecordCollector.prototype = {
       return record.genre === genre;
     })
 
-    var genreValue = 0;
-    genreCollection.forEach(function(record){
-      genreValue += record.price;
-    })
-
-    return genreValue;
+    return this.getValue(genreCollection);
 
   }
 
