@@ -59,5 +59,17 @@ it("can only buy record if collector has enough cash to pay for it", function(){
   assert.strictEqual(0, collector.collectionSize());
 })
 
+it("can check to see if record is in collection", function(){
+  collector.buy(record1);
+  assert.strictEqual(true, collector.hasRecord(record1))
+})
+
+xit("can sell record if record is contained in collection", function(){
+
+
+
+})
+
+
 })
 
