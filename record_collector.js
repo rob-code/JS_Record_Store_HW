@@ -60,23 +60,24 @@ RecordCollector.prototype = {
     return this.getValue(genreCollection);
   },
 
-  mostValuable: function(){
-    this.collection.sort(function(a,b){
+  sortArray: function(){
+    return this.collection.sort(function(a,b){
       return a.price - b.price;
     }) 
+  },
+
+  mostValuable: function(){
+    this.sortArray();
     return this.collection[this.collection.length - 1];
   },
 
   sortLoToHi: function(){
-    return this.collection.sort(function(a,b){
-      return a.price - b.price;
-    }) 
+    return this.sortArray();
   },
 
   sortHiToLo: function(){
-    return this.collection.sort(function(a,b){
-      return a.price + b.price;
-    })
+    var array = this.sortArray();
+    return array.reverse();
   }
 
 
