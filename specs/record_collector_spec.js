@@ -87,6 +87,14 @@ it("can not sell record if its not in the collection", function(){
   assert.strictEqual(1100, collector.cash);
 })
 
+it("can view total value of record collection", function(){
+  collector.buy(record1);
+  collector.buy(record2);
+  assert.strictEqual(2100, collector.collectionValue());
+  collector.sell(record1);
+  collector.sell(record2);
+  assert.strictEqual(0, collector.collectionValue());
+})
 
 })
 

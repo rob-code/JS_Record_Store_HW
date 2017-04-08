@@ -34,10 +34,18 @@ RecordCollector.prototype = {
     {
       console.log("Sorry, " + this.name + " does not have " + record.title + " in their collection")
     }
+  },
 
-
-
+  collectionValue: function(){
+    var value = 0;
+    this.collection.forEach(function(record){
+        value += record.price;
+    })
+    return value
   }
+
+
+
 
 }
 
