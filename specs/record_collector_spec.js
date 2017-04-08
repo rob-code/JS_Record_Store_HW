@@ -61,20 +61,30 @@ it("can only buy record if collector has enough cash to pay for it", function(){
 
 it("can check to see if record is in collection", function(){
   collector.buy(record1);
-  assert.strictEqual(true, collector.hasRecord(record1))
+  assert.strictEqual(true, collector.hasRecord(record1));
 })
 
 it("can check to see if record is not in collection", function(){
   collector.buy(record1);
-  assert.strictEqual(false, collector.hasRecord(record2))
+  assert.strictEqual(false, collector.hasRecord(record2));
 })
 
+it("can sell record if record is contained in collection", function(){
+  collector.buy(record1);
+  collector.buy(record5);
+  assert.strictEqual(1100, collector.cash);
+  collector.sell(record1);
+  assert.strictEqual(2000, collector.cash);
+  assert.strictEqual(1, collector.collectionSize());
+})
 
-
-xit("can sell record if record is contained in collection", function(){
-
-
-
+it("can not sell record if its not in the collection", function(){
+  collector.buy(record1);
+  collector.buy(record5);
+  assert.strictEqual(2, collector.collectionSize());
+  collector.sell(record2);
+  assert.strictEqual(2, collector.collectionSize());
+  assert.strictEqual(1100, collector.cash);
 })
 
 
