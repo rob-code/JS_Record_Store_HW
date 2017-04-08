@@ -42,8 +42,25 @@ RecordCollector.prototype = {
         value += record.price;
     })
     return value
-  }
+  },
 
+  addCash: function(amount){
+    this.cash += amount;
+  },
+
+  genreTotal: function(genre){
+    var genreCollection = this.collection.filter(function(record){
+      return record.genre === genre;
+    })
+
+    var genreValue = 0;
+    genreCollection.forEach(function(record){
+      genreValue += record.price;
+    })
+
+    return genreValue;
+
+  }
 
 
 

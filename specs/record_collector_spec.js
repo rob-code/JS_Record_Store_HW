@@ -23,7 +23,7 @@ record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
 record3 = new Record("d", "e", "f", 2);
 record4 = new Record("Status Quo", "Whatever You Want", "pop", 2);
 record5 = new Record("Beethoven", "9th Symphony", "classical", 1000);
-record6 = new Record("Yes", "Close to the Edge", "prog", 1250);
+record6 = new Record("Yes", "Close to the Edge", "prog", 1200);
 record7 = new Record("ELP", "Pictures at an Exhibtion", "prog", 1300);
 record8 = new Record("Tchaikovsky", "1812 Overture", "classical", 1000);
 record9 = new Record("Mr Bling", "Totally Expensive", "pop", 5000)
@@ -94,6 +94,28 @@ it("can view total value of record collection", function(){
   collector.sell(record1);
   assert.strictEqual(1200, collector.collectionValue());
 })
+
+it("can add cash", function(){
+  collector.addCash(1000000);
+  assert.strictEqual(1003000, collector.cash);
+})
+
+it("can view total value by genre", function(){
+  collector.addCash(1000000);
+  collector.buy(record1);
+  collector.buy(record2);
+  collector.buy(record3);
+  collector.buy(record4);
+  collector.buy(record5);
+  collector.buy(record6);
+  collector.buy(record7);
+  collector.buy(record8);
+  collector.buy(record9);
+  assert.strictEqual(2500, collector.genreTotal("prog"));
+  assert.strictEqual(7102, collector.genreTotal("pop"));
+
+})
+
 
 })
 
