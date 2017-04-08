@@ -1,4 +1,5 @@
-var RecordCollector = function(cash){
+var RecordCollector = function(name, cash){
+  this.name = name;
   this.cash = cash;
   this.collection = [];
 }
@@ -10,9 +11,14 @@ collectionSize: function(){
 },
 
 buy: function(record){
-  //test for enough cash
+  //if (){//test for enough cash
   this.cash -= record.price;
   this.collection.push(record);
+// } 
+// else
+// {
+//   console.log("Sorry, there is not enough cash for collector buy this record")
+// }
 },
 
 sell: function(record){

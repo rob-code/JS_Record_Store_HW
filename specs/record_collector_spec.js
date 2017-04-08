@@ -16,7 +16,7 @@ var record7
 var record8
 
 beforeEach(function(){
-collector = new RecordCollector(3000);
+collector = new RecordCollector("Bill", 3000);
 record1 = new Record("Beatles", "Help", "pop", 900);
 record2 = new Record("Elton John", "Goodbye Yellow Brick Road", "pop", 1200);
 record3 = new Record("d", "e", "f", 2);
@@ -31,6 +31,11 @@ it("has cash", function(){
 assert.strictEqual(3000, collector.cash);
 })
 
+it("has name", function(){
+assert.strictEqual("Bill", collector.name);
+})
+
+
 it("has no records in collection at start", function(){
   assert.strictEqual(0, collector.collectionSize());
 })
@@ -44,6 +49,7 @@ it("can buy record and decrease cash by price of record", function(){
   collector.buy(record1);
   assert.strictEqual(2100, collector.cash);
 })
+
 
 
 })
