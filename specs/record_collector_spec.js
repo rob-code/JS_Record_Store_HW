@@ -92,8 +92,7 @@ it("can view total value of record collection", function(){
   collector.buy(record2);
   assert.strictEqual(2100, collector.collectionValue());
   collector.sell(record1);
-  collector.sell(record2);
-  assert.strictEqual(0, collector.collectionValue());
+  assert.strictEqual(1200, collector.collectionValue());
 })
 
 })
