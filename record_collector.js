@@ -58,7 +58,25 @@ RecordCollector.prototype = {
     })
 
     return this.getValue(genreCollection);
+  },
 
+  mostValuable: function(){
+    this.collection.sort(function(a,b){
+      return a.price - b.price;
+    }) 
+    return this.collection[this.collection.length - 1];
+  },
+
+  sortLoToHi: function(){
+    return this.collection.sort(function(a,b){
+      return a.price - b.price;
+    }) 
+  },
+
+  sortHiToLo: function(){
+    return this.collection.sort(function(a,b){
+      return a.price + b.price;
+    })
   }
 
 
