@@ -21,22 +21,14 @@ buy: function(record){
   }
 },
 
-hasRecord: function(recordToFind){
-  //undefined if no record is provided or found?
-  return this.collection.find(function(record){
-    return record === recordToFind
-  })
-
+hasRecord: function(record){
+  return this.collection.includes(record)
 }
 
-sell: function(record){
- if (hasRecord(record)){
-  
- }
-
-  //test if record is in collection
-
-}
+// sell: function(record){
+//  if (hasRecord(record)){
+//  }
+//  }
 
 
 }

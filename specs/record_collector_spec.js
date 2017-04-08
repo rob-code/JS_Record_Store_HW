@@ -64,6 +64,13 @@ it("can check to see if record is in collection", function(){
   assert.strictEqual(true, collector.hasRecord(record1))
 })
 
+it("can check to see if record is not in collection", function(){
+  collector.buy(record1);
+  assert.strictEqual(false, collector.hasRecord(record2))
+})
+
+
+
 xit("can sell record if record is contained in collection", function(){
 
 
