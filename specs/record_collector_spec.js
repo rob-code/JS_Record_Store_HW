@@ -14,6 +14,7 @@ var record5
 var record6
 var record7
 var record8
+var record9
 
 beforeEach(function(){
 collector = new RecordCollector("Bill", 3000);
@@ -25,6 +26,8 @@ record5 = new Record("Beethoven", "9th Symphony", "classical", 1000);
 record6 = new Record("Yes", "Close to the Edge", "prog", 1250);
 record7 = new Record("ELP", "Pictures at an Exhibtion", "prog", 1300);
 record8 = new Record("Tchaikovsky", "1812 Overture", "classical", 1000);
+record9 = new Record("Mr Bling", "Totally Expensive", "pop", 5000)
+
 })
 
 it("has cash", function(){
@@ -50,7 +53,11 @@ it("can buy record and decrease cash by price of record", function(){
   assert.strictEqual(2100, collector.cash);
 })
 
-
+it("can only buy record if collector has enough cash to pay for it", function(){
+  collector.buy(record9);
+  assert.strictEqual(3000, collector.cash);
+  assert.strictEqual(0, collector.collectionSize());
+})
 
 })
 

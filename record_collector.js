@@ -11,14 +11,14 @@ collectionSize: function(){
 },
 
 buy: function(record){
-  //if (){//test for enough cash
-  this.cash -= record.price;
-  this.collection.push(record);
-// } 
-// else
-// {
-//   console.log("Sorry, there is not enough cash for collector buy this record")
-// }
+  if (record.price <= this.cash){
+    this.cash -= record.price;
+    this.collection.push(record);
+  } 
+  else
+  {
+    console.log("Sorry, " + this.name + " does not have enough cash to buy this record.")
+  }
 },
 
 sell: function(record){
