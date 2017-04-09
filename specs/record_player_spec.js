@@ -45,8 +45,15 @@ it("recordplayer has no records to play when instantiated", function(){
 })
 
 it("can load records ready to play", function(){
-  recordPlayer.loadRecords(collector.getCollection())
+  recordPlayer.loadRecords(collector.getCollection());
   assert.strictEqual(9, recordPlayer.playLoad());
+})
+
+it("can play records with a time interval between them", function(){
+  recordPlayer.loadRecords(collector.getCollection());
+  recordPlayer.playRecords();
+//need to grapple with asynch tests for this to work
+
 })
 
 })
