@@ -10,6 +10,10 @@ RecordCollector.prototype = {
     return this.collection.length
   },
 
+  getCollection:function(){
+    return this.collection;
+  },
+
   buy: function(record){
     if (record.price <= this.cash){
       this.cash -= record.price;

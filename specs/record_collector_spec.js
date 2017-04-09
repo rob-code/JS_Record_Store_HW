@@ -185,5 +185,21 @@ it("can compare collection value with that of another collector", function(){
   assert.strictEqual(false, collector.isMyCollectionWorthMoreThan(collector2));
 })
 
+it("can return the collection as an array", function(){
+  collector.addCash(1000000);
+  collector.buy(record1);
+  collector.buy(record7);
+  collector.buy(record3);
+  collector.buy(record4);
+  collector.buy(record9);
+  collector.buy(record5);
+  collector.buy(record6);
+  collector.buy(record8);
+  collector.buy(record2);
+  var collection = collector.getCollection();
+  assert(9, collection.length);
+})
+
+
 })
 
