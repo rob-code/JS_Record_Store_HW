@@ -80,11 +80,23 @@ RecordCollector.prototype = {
     return array.reverse();
   },
 
-  compareCollectionValues: function(otherCollector){
-    console.log(otherCollector.name + " has a collection valued at : " + otherCollector.collectionValue());
-    console.log(this.name + " has a collection valued at : " + this.collectionValue());
-
+  isMyCollectionWorthMoreThan: function(anOther){
+    if (this.collectionValue() > anOther.collectionValue()){
+      console.log("My name is " + this.name + " and my collection value is worth more than yours " + anOther.name);
+      return true;
+    }
+    else if (this.collectionValue() < anOther.collectionValue()){
+     console.log("My name is " + this.name + " and sadly my collection value is worth less than yours " + anOther.name)
+     return false; 
+   }
+   else
+   {
+    console.log("My name is " + this.name + " and my collection value is worth the same as yours " + anOther.name)
+    return false;
   }
+
+
+}
 
 
 }

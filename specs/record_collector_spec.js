@@ -169,11 +169,11 @@ it("can compare collection value with that of another collector", function(){
   collector.buy(record7);
   collector.buy(record3);
   collector.buy(record4);
-  collector.buy(record9);
-  collector.buy(record5);
-  collector.buy(record6);
-  collector.buy(record8);
-  collector.buy(record2);
+  //collector.buy(record9);
+  // collector.buy(record5);
+  // collector.buy(record6);
+  // collector.buy(record8);
+  // collector.buy(record2);
 
   collector2.addCash(100000);
   collector2.buy(record1);
@@ -182,7 +182,7 @@ it("can compare collection value with that of another collector", function(){
   collector2.buy(record4);
   collector2.buy(record9);
 
-  collector.compareCollectionValues(collector2);
+  assert.strictEqual(false, collector.isMyCollectionWorthMoreThan(collector2));
 })
 
 })
