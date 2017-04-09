@@ -12,7 +12,9 @@ RecordPlayer.prototype = {
     this.records = recordsToPlay;
   }
 
-
+  //add timeout to play records with a closure
+  // an inner function which remembers its context and we pass in records
+  //to it  
 
 
 }
