@@ -12,38 +12,21 @@ RecordPlayer.prototype = {
     this.records = recordsToPlay;
   },
 
-  setUpPlayInterval: function(playInterval){
+  setUpPlay: function(playInterval){
 
-    // setTimeout(function(){
-    //   console.log("Playing now: +++++++++++++++ ");
-    // }, 100)
+    return function (record){
+      console.log("Playing " + record.title + "With a play interval of " + playInterval);
+    }
 
     },
 
-
   playRecords: function(){
-    //var play = this.setUpPlayInterval(2000);
-
-      console.log("Record playing");
-
-      setTimeout(function(){
-        console.log("done");
-      },2000)
-      
-
-
-    // this.records.forEach(function(record){
-    //   this.play(record);
-    // }.bind(this))
-
+      var play = this.setUpPlay(20);
+    
+      this.records.forEach(function(record){
+        play(record);
+      })
   }
-
-
-
-  //add timeout to play records with a closure
-  // an inner function which remembers its context and we pass in records
-  //to it  
-
 
 }
 

@@ -52,7 +52,7 @@ it("can load records ready to play", function(){
 it("can play records with a time interval between them", function(){
   recordPlayer.loadRecords(collector.getCollection());
   recordPlayer.playRecords();
-//need to grapple with asynch tests for this to work
+//set up asynch tests in mocha to accommodate a timer
 
 })
 
