@@ -1,5 +1,6 @@
 var RecordPlayer = function(){
   this.records = [];
+  this.changeCounter = 0;
 }
 
 RecordPlayer.prototype = {
@@ -14,20 +15,22 @@ RecordPlayer.prototype = {
 
 
 //play records by closure but timer doesnt work 
-  setUpPlay: function(playInterval){
-    return function (record){
-      console.log("Playing " + record.title + " with a play interval of " + playInterval);
-      setTimeout(function play(){
-        console.log("time to change the record");
-            }, playInterval);
-        }
+  play: function(message){
+
+      console.log(message + " " + this.records[this.changeCounter].title);
+      this.changeCounter += 1;
   },
 
-  playRecords: function(){
-    var play = this.setUpPlay(2000);
-    this.records.forEach(function(record){
-      play(record);
-    })
+  recordChanger: function(){
+
+    this.changeCounter = 0;
+
+    for (var i = 0; i < this.records.length; i++){
+        setTimeout(function(){
+        this.play("changing the record");
+            }.bind(this), 2000 + (i * 1000));
+    } 
+    
   },
 
 
