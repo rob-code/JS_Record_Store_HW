@@ -85,19 +85,23 @@ RecordCollector.prototype = {
   },
 
   isMyCollectionWorthMoreThan: function(anOther){
-    if (this.collectionValue() > anOther.collectionValue()){
-      console.log("My name is " + this.name + " and my collection value is worth more than yours " + anOther.name);
-      return true;
-    }
-    else if (this.collectionValue() < anOther.collectionValue()){
-     console.log("My name is " + this.name + " and sadly my collection value is worth less than yours " + anOther.name)
-     return false; 
-   }
-   else
-   {
-    console.log("My name is " + this.name + " and my collection value is worth the same as yours " + anOther.name)
-    return false;
-  }
+  //   if (this.collectionValue() > anOther.collectionValue()){
+  //     console.log("My name is " + this.name + " and my collection value is worth more than yours " + anOther.name);
+  //     return true;
+  //   }
+  //   else if (this.collectionValue() < anOther.collectionValue()){
+  //    console.log("My name is " + this.name + " and sadly my collection value is worth less than yours " + anOther.name)
+  //    return false; 
+  //  }
+  //  else
+  //  {
+  //   console.log("My name is " + this.name + " and my collection value is worth the same as yours " + anOther.name)
+  //   return false;
+  // }
+
+//alternatively, all I need is!
+return this.collectionValue() > anOther.collectionValue();
+
 
 
 }
